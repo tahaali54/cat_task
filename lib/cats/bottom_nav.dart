@@ -3,10 +3,20 @@ import 'package:flutter/material.dart';
 import '../common/self_table_icons.dart';
 import '../common/theme.dart';
 
-class CustomBottomNavBar extends StatelessWidget {
+class CustomBottomNavBar extends StatefulWidget {
   const CustomBottomNavBar({
     Key? key,
+    required this.onTap,
   }) : super(key: key);
+
+  final ValueChanged<int> onTap;
+
+  @override
+  State<CustomBottomNavBar> createState() => _CustomBottomNavBarState();
+}
+
+class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
+  int _currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +31,15 @@ class CustomBottomNavBar extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.only(top: 16),
         child: BottomNavigationBar(
-          currentIndex: 0,
+          onTap: (value) {
+            if (value != _currentIndex) {
+              setState(() {
+                _currentIndex = value;
+              });
+              widget.onTap(value);
+            }
+          },
+          currentIndex: _currentIndex,
           selectedItemColor: CatColors.accent,
           unselectedItemColor: CatColors.highEmphasisSurface,
           backgroundColor: Colors.transparent,
