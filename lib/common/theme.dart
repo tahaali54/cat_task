@@ -61,4 +61,10 @@ class CatTextStyles {
     fontWeight: FontWeight.w500,
     color: CatColors.highEmphasisAccent,
   );
+
+  static const TextStyle surfaceButton = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
+    color: CatColors.highEmphasisSurface,
+  );
 }
