@@ -55,4 +55,10 @@ class CatTextStyles {
     fontWeight: FontWeight.normal,
     color: CatColors.mediumEmphasisSurface,
   );
+
+  static const TextStyle accentButton = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
+    color: CatColors.highEmphasisAccent,
+  );
 }

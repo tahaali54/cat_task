@@ -62,6 +62,10 @@ flutter:
       fonts:
         - asset: fonts/SelfTableIcons.ttf
 
+  assets:
+    - assets/img_cat.png
+    - assets/img_dp.png
+
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
